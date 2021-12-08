@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign up</title>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/signup.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+    <body class="text-center">
+        <main class="form-signup">
+            <form th:object="${signUpForm}" method="post">
+                <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+
+                <div class="form-floating">
+                    <input type="email" th:field="*{username}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="password" th:field="*{password}" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="text" th:field="*{name}" class="form-control" id="floatingName" placeholder="name">
+                    <label for="floatingPassword">Name</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="text" th:field="*{phoneNumber}" class="form-control" id="floatingPhoneNumber" placeholder="phone">
+                    <label for="floatingPassword">PhoneNumber</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="text" th:field="*{address}" class="form-control" id="floatingAddress" placeholder="address">
+                    <label for="floatingPassword">Address</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Sign up</button>
+            </form>
+        </main>
+    </body>
+</html>
