@@ -25,18 +25,6 @@ public class MemberController {
         return "members/login";
     }
 
-    @PostMapping("/login")
-    public String Login(@ModelAttribute LoginForm loginForm, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "members/login";
-        }
-        Member member = memberService.login(loginForm.getUsername(), loginForm.getPassword());
-        if (member != null) {
-            return "redirect:/";
-        }
-        return "members/login";
-    }
-
     @GetMapping("/signup")
     public String addForm(@ModelAttribute SignUpForm signUpForm) {
         return "members/signup";

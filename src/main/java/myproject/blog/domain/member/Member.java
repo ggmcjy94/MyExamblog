@@ -24,12 +24,11 @@ public class Member {
     private String address;
 
 
-    public Member(SignUpForm signUpForm) {
-        username = signUpForm.getUsername();
-        password = signUpForm.getPassword();
-        name = signUpForm.getName();
-        phoneNumber = signUpForm.getPhoneNumber();
-        address = signUpForm.getAddress();
+    public Member(String username, String password, String name, String phoneNumber, String address) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
-
 }
