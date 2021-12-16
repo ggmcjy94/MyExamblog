@@ -28,9 +28,10 @@
         <main class="form-signup">
             <form th:action="@{/member/info}" th:object="${infoForm}" method="post">
                 <h1 class="h3 mb-3 fw-normal">업데이트</h1>
+                <input type="hidden" th:field="*{id}">
 
                 <div class="form-floating">
-                    <input type="email" th:field="*{username}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="text" th:field="*{username}" class="form-control" id="floatingInput" placeholder="name@example.com" disabled>
                     <label for="floatingInput">Email address</label>
                 </div>
 

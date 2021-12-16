@@ -50,10 +50,9 @@ public class MemberController {
     @GetMapping("/info")
     public String MemberInfo(Authentication authentication, Model model) {
         PrincipalDetail principal = (PrincipalDetail) authentication.getPrincipal();
-        System.out.println("principal.getUsername() = " + principal.getUsername());
-        Member member = memberRepository.findMember(principal.getUsername(), principal.getPassword());
-        System.out.println("member.getUsername() = " + member.getUsername());
+        Member member = memberRepository.findByUsername(principal.getUsername());
         InfoForm infoForm = new InfoForm(
+                member.getId(),
                 member.getUsername(),
                 member.getPassword(),
                 member.getName(),
@@ -61,12 +60,15 @@ public class MemberController {
                 member.getAddress()
                 );
         model.addAttribute("infoForm", infoForm);
+        System.out.println("infoForm.getUsername1() = " + infoForm.getUsername());
         return "members/info";
     }
 
     @PostMapping("/info")
     public String MemberInfoUpdate(@ModelAttribute InfoForm infoForm) {
-        System.out.println("infoForm = " + infoForm.getUsername());
+        System.out.println("infoForm.getUsername2() = " + infoForm.getUsername());
+        System.out.println("infoForm.getName() = " + infoForm.getName());
+        System.out.println("infoForm.getAddress() = " + infoForm.getAddress());
         memberService.updateMember(infoForm);
         return "redirect:/";
     }

@@ -27,12 +27,12 @@ public class MemberService {
     public void updateMember(InfoForm infoForm) {
         String passwordEncode = bCryptPasswordEncoder.encode(infoForm.getPassword());
         Member member = new Member(
+                infoForm.getId(),
                 infoForm.getUsername(),
                 passwordEncode,
                 infoForm.getName(),
                 infoForm.getPhoneNumber(),
-                infoForm.getAddress()
-        );
+                infoForm.getAddress());
         memberRepository.save(member);
     }
 

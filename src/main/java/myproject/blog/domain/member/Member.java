@@ -3,6 +3,7 @@ package myproject.blog.domain.member;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import myproject.blog.controller.web.form.InfoForm;
 import myproject.blog.controller.web.form.SignUpForm;
 
 import javax.persistence.Entity;
@@ -31,4 +32,14 @@ public class Member {
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
+
+    public Member(Long id, String username, String password, String name, String phoneNumber, String address) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
 }

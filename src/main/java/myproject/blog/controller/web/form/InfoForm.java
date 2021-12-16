@@ -7,11 +7,10 @@ import lombok.Data;
 @AllArgsConstructor
 public class InfoForm {
 
+    private Long id;
     private String username;
     private String password;
     private String name;
     private String phoneNumber;
     private String address;
-
-
 }
